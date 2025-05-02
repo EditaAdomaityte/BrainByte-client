@@ -41,3 +41,88 @@ export const getmyquestions = async (quizId) => {
         })
     const questions = await response.json()
     return questions}
+
+export const getCategories = async (quizId) => {
+   
+    const response = await fetch(`http://localhost:8000/categories`,
+        {
+            headers: {
+                Authorization: `Token ${JSON.parse(localStorage.getItem("user_token")).token}`
+            }
+        })
+    const categories = await response.json()
+    return categories}
+
+
+export const createNewQuestion=async(question)=>{
+    const response=await fetch("http://localhost:8000/questions",{
+        method: "POST",
+        headers:{
+            "Content-Type":"application/json",
+             Authorization: `Token ${JSON.parse(localStorage.getItem("user_token")).token}`
+        },
+        body: JSON.stringify(question)
+    })
+    return response.json()
+}
+
+export const createCategoryInQuestion=async(array)=>{
+    for (const category of array){
+        const newCategoryEntry={
+          question_id: category.question_id,
+          category_id: category.category_id,
+        }
+        await fetch(`http://localhost:8000/questioncategories`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Token ${JSON.parse(localStorage.getItem("user_token")).token}`
+          },
+          body: JSON.stringify(newCategoryEntry),
+        });
+      }
+    };
+
+
+    export const getQuestion = async (questionId) => {
+   
+        const response = await fetch(`http://localhost:8000/questions/${questionId}`,
+            {
+                headers: {
+                    Authorization: `Token ${JSON.parse(localStorage.getItem("user_token")).token}`
+                }
+            })
+        const question = await response.json()
+        return question} 
+    
+
+export const deleteCategoryInQuestion=async(questionId)=>{
+    const response = await fetch(`http://localhost:8000/questioncategories?question_id=${questionId}`, {
+        headers: {
+            Authorization: `Token ${JSON.parse(localStorage.getItem("user_token")).token}`
+        }
+    })
+  const categoriesInQuestionArray = await response.json(); //result is array that has objects with questionId
+
+  for (const category of categoriesInQuestionArray) {
+    //deleting every object in the array
+    await fetch(`http://localhost:8088/danceTypeInEvent/${dance.id}`,  {
+        method: "DELETE",
+        headers: {
+            Authorization: `Token ${JSON.parse(localStorage.getItem("user_token")).token}`
+        }
+    });
+  }}
+
+export const getCategoriesInQuestion=async(questionId)=>{
+    const response = await fetch(`http://localhost:8000/questioncategories?question_id=${questionId}`, {
+        headers: {
+            Authorization: `Token ${JSON.parse(localStorage.getItem("user_token")).token}`
+        }
+    })
+    const categoriesInQuestion = await response.json()
+        return categoriesInQuestion 
+}
+
+export const updateQuestion=async()=>{}
+
