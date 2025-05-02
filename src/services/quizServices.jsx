@@ -6,5 +6,5 @@ export const getquizzes = async () => {
                 Authorization: `Token ${JSON.parse(localStorage.getItem("user_token")).token}`
             }
         })
-    const categories = await response.json()
-    return categories}
+    const quizes = await response.json()
+    return quizes}

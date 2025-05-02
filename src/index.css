@@ -10,3 +10,13 @@
   background-color: #275c44; /* lighter green for hover */
   color: #f0f0f0; /* slight tone shift for visibility */
 }
+
+.quiz-card {
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.quiz-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
