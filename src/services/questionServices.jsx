@@ -96,23 +96,14 @@ export const createCategoryInQuestion=async(array)=>{
         return question} 
     
 
-export const deleteCategoryInQuestion=async(questionId)=>{
-    const response = await fetch(`http://localhost:8000/questioncategories?question_id=${questionId}`, {
-        headers: {
-            Authorization: `Token ${JSON.parse(localStorage.getItem("user_token")).token}`
-        }
-    })
-  const categoriesInQuestionArray = await response.json(); //result is array that has objects with questionId
-
-  for (const category of categoriesInQuestionArray) {
-    //deleting every object in the array
-    await fetch(`http://localhost:8088/danceTypeInEvent/${dance.id}`,  {
+export const deleteCategoryInQuestion = async (questionId) => {
+    await fetch(`http://localhost:8000/questioncategories/delete_by_question?question_id=${questionId}`, {
         method: "DELETE",
         headers: {
-            Authorization: `Token ${JSON.parse(localStorage.getItem("user_token")).token}`
-        }
-    });
-  }}
+          Authorization: `Token ${JSON.parse(localStorage.getItem("user_token")).token}`,
+        },
+      });
+};
 
 export const getCategoriesInQuestion=async(questionId)=>{
     const response = await fetch(`http://localhost:8000/questioncategories?question_id=${questionId}`, {
@@ -124,5 +115,17 @@ export const getCategoriesInQuestion=async(questionId)=>{
         return categoriesInQuestion 
 }
 
-export const updateQuestion=async()=>{}
+export const updateQuestion=async(questionId, updatedQuestion)=>{
+    const response = await fetch(`http://localhost:8000/questions/${questionId}`, {
+    method: 'PUT',
+    headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Token ${JSON.parse(localStorage.getItem("user_token")).token}`,
+    },
+    body: JSON.stringify(updatedQuestion),
+  });
+  
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  }}
 

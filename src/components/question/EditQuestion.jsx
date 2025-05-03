@@ -39,14 +39,12 @@ export const EditQuestion = () => {
           if (questionData.categories && Array.isArray(questionData.categories)) {
             // Transform the categories to match your expected format
             const formattedCategories = questionData.categories.map(cat => ({
-              questionId: parseInt(questionId),
-              categoryId: cat.id
+              question_id: parseInt(questionId),
+              category_id: cat.id
             }));
             setCurrentCategories(formattedCategories);
           }
         }
-        
-        // Then fetch all available categories
         const categoriesData = await getCategories();
         console.log("All categories data received:", categoriesData);
         setAllCategories(categoriesData || []);
@@ -66,19 +64,19 @@ export const EditQuestion = () => {
 
     const targetCategoryId = Number(event.target.id);
     const isCategoryAlreadySelected = currentCategories.some(
-      (currentCategory) => currentCategory.categoryId === targetCategoryId
+      (currentCategory) => currentCategory.category_id === targetCategoryId
     );
 
     if (isCategoryAlreadySelected) {
       // Remove the category if it's already selected
       setCurrentCategories((prevCategories) =>
-        prevCategories.filter((category) => category.categoryId !== targetCategoryId)
+        prevCategories.filter((category) => category.category_id !== targetCategoryId)
       );
     } else {
       // Add the category if it's not already selected
       const newCategory = {
-        questionId: parseInt(questionId),
-        categoryId: targetCategoryId,
+        question_id: parseInt(questionId),
+        category_id: targetCategoryId,
       };
 
       setCurrentCategories((prevCategories) => [...prevCategories, newCategory]);
@@ -97,7 +95,7 @@ export const EditQuestion = () => {
   const handleSaveQuestion = async (event) => {
     event.preventDefault();
 
-    // Validate that an answer has been selected
+    
     if (thisQuestion.answer === null) {
       alert("Please select an answer (True or False)");
       return;
@@ -105,7 +103,7 @@ export const EditQuestion = () => {
 
     const updatedQuestion = {
       body: thisQuestion.body || "",
-      answer: thisQuestion.answer, // This will be a boolean (true or false)
+      answer: thisQuestion.answer, 
     };
 
     try {
@@ -127,7 +125,7 @@ export const EditQuestion = () => {
     }
   };
 
-  // Debug what we have
+  
   console.log("Current state:", {
     thisQuestion,
     currentCategories,
@@ -179,7 +177,7 @@ export const EditQuestion = () => {
                           type="checkbox"
                           id={category.id}
                           checked={currentCategories.some(
-                            (currentCategory) => currentCategory.categoryId === category.id
+                            (currentCategory) => currentCategory.category_id === category.id
                           )}
                           onChange={handleCategoryChange}
                           className="mr-2"
