@@ -50,7 +50,7 @@ export const NewQuestion = () => {
 
     const createdQuestion = {
       body: body.current.value,
-      answer: selectedAnswer, // This will be a boolean (true or false)
+      answer: selectedAnswer, //  a boolean (true or false)
     };
 
     const newQuestion = await createNewQuestion(createdQuestion);
