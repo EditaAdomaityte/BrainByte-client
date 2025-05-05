@@ -28,7 +28,7 @@ export const QuizDetails = () => {
             <strong>Quiz Date: {quiz.created_date}</strong> {/* Add date here */}
           </p>
           <p className="subtitle is-5">
-            <strong>Quiz Category: {quiz.category.name}</strong> {/* Add category here */}
+            <strong>Quiz Category: {quiz.category?.name}</strong> {/* Add category here */}
           </p>
           <p className="subtitle is-5">
             <strong>Result: {quiz.result}%</strong> {/* Add score here */}
