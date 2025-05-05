@@ -13,7 +13,6 @@ export const QuestionList = () => {
   const fetchQuestions = async () => {
     try {
       const data = await getmyquestions();
-      console.log("Fetched questions:", data);
       setMyQuestions(data);
     } catch (error) {
       console.error("Error fetching questions:", error);
@@ -28,14 +27,12 @@ export const QuestionList = () => {
     try {
       setIsDeleting(true);
       const result = await deleteQuestion(questionId);
-      
+
       if (result.success) {
         console.log("Question deleted successfully:", result.message);
-        // Option 1: Fetch questions again from the server
+        // Fetching questions again from the server
         await fetchQuestions();
-        
-        // Option 2: Update state locally (faster UI response)
-        // setMyQuestions(myQuestions.filter(q => q.id !== questionId));
+
       } else {
         console.error("Failed to delete question:", result.error);
       }
@@ -49,14 +46,14 @@ export const QuestionList = () => {
   return (
     <section className="section">
       <div className="container">
-      <button
-                  onClick={() => {
-                    navigate(`/newquestion`);
-                  }}
-                  className="button is-big is-primary is-light"
-                >
-                  Create a Question
-                </button>
+        <button
+          onClick={() => {
+            navigate(`/newquestion`);
+          }}
+          className="button is-big is-primary is-light"
+        >
+          Create a Question
+        </button>
         <h1 className="title has-text-centered is-3 mb-5">My Questions</h1>
 
         <div className="columns is-multiline">

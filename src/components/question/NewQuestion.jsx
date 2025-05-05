@@ -1,6 +1,10 @@
 import { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { getCategories, createNewQuestion, createCategoryInQuestion } from "../../services/questionServices";
+import {
+  getCategories,
+  createNewQuestion,
+  createCategoryInQuestion,
+} from "../../services/questionServices";
 
 export const NewQuestion = () => {
   const body = useRef();
@@ -20,9 +24,11 @@ export const NewQuestion = () => {
       return selectedCategory.category_id === Number(e.target.id);
     });
     if (foundCategory) {
-      const newCurrentCategory = selectedCategories.filter((selectedCategory) => {
-        return selectedCategory.category_id !== foundCategory.category_id;
-      });
+      const newCurrentCategory = selectedCategories.filter(
+        (selectedCategory) => {
+          return selectedCategory.category_id !== foundCategory.category_id;
+        }
+      );
       setSelectedCategories(newCurrentCategory);
     } else {
       const newCategory = {
@@ -34,7 +40,7 @@ export const NewQuestion = () => {
   };
 
   const handleAnswerChange = (e) => {
-    // Convert the string value to a boolean
+    // converting the string value to a boolean
     const value = e.target.value === "true";
     setSelectedAnswer(value);
   };
@@ -42,7 +48,6 @@ export const NewQuestion = () => {
   const handleSaveQuestion = async (event) => {
     event.preventDefault();
 
-    // Validate that an answer has been selected
     if (selectedAnswer === null) {
       alert("Please select an answer (True or False)");
       return;
@@ -50,7 +55,7 @@ export const NewQuestion = () => {
 
     const createdQuestion = {
       body: body.current.value,
-      answer: selectedAnswer, //  a boolean (true or false)
+      answer: selectedAnswer, 
     };
 
     const newQuestion = await createNewQuestion(createdQuestion);
@@ -81,7 +86,6 @@ export const NewQuestion = () => {
           <label className="label">Categories</label>
           <div className="control">
             {categories.map((category) => {
-              
               return (
                 <div key={category.id} className="column is-4">
                   <label className="checkbox">
@@ -103,11 +107,13 @@ export const NewQuestion = () => {
           <label className="label">Answer</label>
           <div className="control">
             <div className="select">
-              <select 
-                value={selectedAnswer === null ? "" : selectedAnswer.toString()} 
+              <select
+                value={selectedAnswer === null ? "" : selectedAnswer.toString()}
                 onChange={handleAnswerChange}
               >
-                <option value="" disabled>Select an answer</option>
+                <option value="" disabled>
+                  Select an answer
+                </option>
                 <option value="true">True</option>
                 <option value="false">False</option>
               </select>
@@ -122,10 +128,10 @@ export const NewQuestion = () => {
             </button>
           </div>
           <div className="control">
-            <button 
-              className="button is-link is-light" 
+            <button
+              className="button is-link is-light"
               type="button"
-              onClick={() => navigate('/myquestions')}
+              onClick={() => navigate("/myquestions")}
             >
               Cancel
             </button>

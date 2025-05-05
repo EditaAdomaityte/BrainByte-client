@@ -6,7 +6,7 @@ import {
   createCategoryInQuestion,
   updateQuestion,
   deleteCategoryInQuestion,
-  getCategoriesInQuestion
+  getCategoriesInQuestion,
 } from "../../services/questionServices";
 
 export const EditQuestion = () => {
@@ -23,34 +23,29 @@ export const EditQuestion = () => {
     const fetchData = async () => {
       setIsLoading(true);
       try {
-        // First fetch the question
         const questionData = await getQuestion(questionId);
-        console.log("Question data received:", questionData);
-        
+
         if (questionData) {
-          // Based on your sample data, questionData is the object itself, not an array
           setQuestion({
             id: questionData.id,
             body: questionData.body || "",
-            answer: questionData.answer
+            answer: questionData.answer,
           });
-          
-          // Extract categories from the question data
-          if (questionData.categories && Array.isArray(questionData.categories)) {
-            // Transform the categories to match your expected format
-            const formattedCategories = questionData.categories.map(cat => ({
+
+          if (
+            questionData.categories &&
+            Array.isArray(questionData.categories)
+          ) {
+            const formattedCategories = questionData.categories.map((cat) => ({
               question_id: parseInt(questionId),
-              category_id: cat.id
+              category_id: cat.id,
             }));
             setCurrentCategories(formattedCategories);
           }
         }
         const categoriesData = await getCategories();
-        console.log("All categories data received:", categoriesData);
         setAllCategories(categoriesData || []);
-        
       } catch (error) {
-        console.error("Error fetching data:", error);
       } finally {
         setIsLoading(false);
       }
@@ -68,34 +63,38 @@ export const EditQuestion = () => {
     );
 
     if (isCategoryAlreadySelected) {
-      // Remove the category if it's already selected
+      // Removing the category if it's already selected
       setCurrentCategories((prevCategories) =>
-        prevCategories.filter((category) => category.category_id !== targetCategoryId)
+        prevCategories.filter(
+          (category) => category.category_id !== targetCategoryId
+        )
       );
     } else {
-      // Add the category if it's not already selected
+      // Adding the category if it's not already selected
       const newCategory = {
         question_id: parseInt(questionId),
         category_id: targetCategoryId,
       };
 
-      setCurrentCategories((prevCategories) => [...prevCategories, newCategory]);
+      setCurrentCategories((prevCategories) => [
+        ...prevCategories,
+        newCategory,
+      ]);
     }
   };
 
   const handleAnswerChange = (e) => {
-    // Convert the string value to a boolean
+    // Converting the string value to a boolean
     const value = e.target.value === "true";
     setQuestion({
       ...thisQuestion,
-      answer: value
+      answer: value,
     });
   };
 
   const handleSaveQuestion = async (event) => {
     event.preventDefault();
 
-    
     if (thisQuestion.answer === null) {
       alert("Please select an answer (True or False)");
       return;
@@ -103,21 +102,17 @@ export const EditQuestion = () => {
 
     const updatedQuestion = {
       body: thisQuestion.body || "",
-      answer: thisQuestion.answer, 
+      answer: thisQuestion.answer,
     };
 
     try {
-      console.log("Updating question with:", updatedQuestion);
       await updateQuestion(questionId, updatedQuestion);
-      
-      console.log("Deleting existing category associations");
       await deleteCategoryInQuestion(questionId);
-      
+
       if (currentCategories && currentCategories.length > 0) {
-        console.log("Creating new category associations:", currentCategories);
         await createCategoryInQuestion(currentCategories);
       }
-      
+
       navigate(`/myquestions`);
     } catch (error) {
       console.error("Error saving question:", error);
@@ -125,28 +120,23 @@ export const EditQuestion = () => {
     }
   };
 
-  
-  console.log("Current state:", {
-    thisQuestion,
-    currentCategories,
-    allCategories,
-    isLoading
-  });
 
   if (isLoading) {
-    return <div className="section">
-      <div className="container has-text-centered">
-        <p className="title">Loading...</p>
-        <progress className="progress is-primary" max="100"></progress>
+    return (
+      <div className="section">
+        <div className="container has-text-centered">
+          <p className="title">Loading...</p>
+          <progress className="progress is-primary" max="100"></progress>
+        </div>
       </div>
-    </div>;
+    );
   }
 
   return (
     <section className="columns is-centered">
       <form className="column is-two-thirds" onSubmit={handleSaveQuestion}>
         <h1 className="title">Update Question</h1>
-        
+
         <div className="box">
           <div className="field">
             <label className="label">Question</label>
@@ -158,7 +148,7 @@ export const EditQuestion = () => {
                 onChange={(event) => {
                   setQuestion({
                     ...thisQuestion,
-                    body: event.target.value
+                    body: event.target.value,
                   });
                 }}
               />
@@ -177,7 +167,8 @@ export const EditQuestion = () => {
                           type="checkbox"
                           id={category.id}
                           checked={currentCategories.some(
-                            (currentCategory) => currentCategory.category_id === category.id
+                            (currentCategory) =>
+                              currentCategory.category_id === category.id
                           )}
                           onChange={handleCategoryChange}
                           className="mr-2"
@@ -197,8 +188,12 @@ export const EditQuestion = () => {
             <label className="label">Answer</label>
             <div className="control">
               <div className="select">
-                <select 
-                  value={thisQuestion.answer === null ? "" : thisQuestion.answer.toString()} 
+                <select
+                  value={
+                    thisQuestion.answer === null
+                      ? ""
+                      : thisQuestion.answer.toString()
+                  }
                   onChange={handleAnswerChange}
                 >
                   <option value="" disabled>

@@ -7,7 +7,6 @@ export const QuizList = () => {
 
   useEffect(() => {
     getquizzes().then((data) => {
-      console.log(data);
       setQuizzes(data);
     });
   }, []);
@@ -33,7 +32,9 @@ export const QuizList = () => {
                   <p>
                     Category: <strong>{quiz.category.name}</strong>
                   </p>
-                  <p>Questions: <strong>{quiz.question_count}</strong></p>
+                  <p>
+                    Questions: <strong>{quiz.question_count}</strong>
+                  </p>
                   <p>
                     Score: <strong>{quiz.result}%</strong>
                   </p>
