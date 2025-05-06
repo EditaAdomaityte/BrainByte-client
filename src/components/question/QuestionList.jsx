@@ -29,7 +29,6 @@ export const QuestionList = () => {
       const result = await deleteQuestion(questionId);
 
       if (result.success) {
-        console.log("Question deleted successfully:", result.message);
         // Fetching questions again from the server
         await fetchQuestions();
 
