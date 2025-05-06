@@ -9,14 +9,15 @@ https://github.com/EditaAdomaityte/BrainByte-api
 
 
 ## Features
-
-Category Selection: Choose from various web development categories
-Quiz Customization: Select the number of questions you want to answer
-Interactive Quiz Interface: Answering true/false questions with an intuitive UI
-Results Display: Detailed quiz results showing correct and incorrect answers
-Quiz History: View a list of all quizzes you've taken
-Contribution System: Submit your own questions to help grow the platform
-Question Management: Edit and delete questions you've contributed
+<p></p>
+• Category Selection: Choose from various web development categories
+• Quiz Customization: Select the number of questions you want to answer
+• Interactive Quiz Interface: Answering true/false questions with an intuitive UI
+• Results Display: Detailed quiz results showing correct and incorrect answers
+• Quiz History: View a list of all quizzes you've taken
+• Contribution System: Submit your own questions to help grow the platform
+• Question Management: Edit and delete questions you've contributed
+</p>
 
 ## Wireframe
 
@@ -66,42 +67,43 @@ The application will be available at URL provided in your terminal!
   Create an account or Log in if account is already created.
   
 2. ### Taking a Quiz
-
-Navigate to the 'Start quiz' in Nav Bar
-Select a category from the dropdown menu
-Choose the number of questions you want to answer
-Click "Start Quiz"
-Answer the true/false questions
-Submit your answers to see your results
+<p>
+• Navigate to the 'Start quiz' in Nav Bar
+• Select a category from the dropdown menu
+• Choose the number of questions you want to answer
+• Click "Start Quiz"
+• Answer the true/false questions
+• Submit your answers to see your results
+</p>
 
 3. ### Viewing Quiz History
-
-Navigate to the "My Results" section
-View a list of all quizzes you've taken
-Click on any quiz to see detailed results
+<p>
+• Navigate to the "My Results" section
+• View a list of all quizzes you've taken
+• Click on any quiz to see detailed results
+</p>
 
 4. ### Contributing Questions
-
-Navigate to the "Contribute" section
-Fill out the form with your question details
-Submit the question
-
+<p>
+• Navigate to the "Contribute" section
+• Fill out the form with your question details
+• Submit the question
+</p>
 5. ### Managing Your Questions
-
-Navigate to the "My Questions" section
-View all questions you've contributed
-Edit or delete questions as needed
-
-API Integration
-The frontend communicates with the Django backend through RESTful API endpoints:
+<p>
+• Navigate to the "My Questions" section
+• View all questions you've contributed
+• Edit or delete questions as needed
+</p>
 
 ## Contributing
-
-Fork the repository
-Create your feature branch (git checkout -b feature/amazing-feature)
-Commit your changes (git commit -m 'Add some amazing feature')
-Push to the branch (git push origin feature/amazing-feature)
-Open a Pull Request
+<p> 
+• Fork the repository
+• Create your feature branch (git checkout -b feature/amazing-feature)
+• Commit your changes (git commit -m 'Add some amazing feature')
+• Push to the branch (git push origin feature/amazing-feature)
+• Open a Pull Request
+</p>
 
 ## Technologies Used
 
