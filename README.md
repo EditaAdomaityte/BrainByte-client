@@ -32,34 +32,33 @@ React.js
 React Router for navigation
 CSS/Bulma for styling
 
-Prerequisites
-Before you begin, ensure you have the following installed:
-
-Node.js (v14.0.0 or higher) https://nodejs.org/en/download
-npm (v6.0.0 or higher)
-
 ## Installation
 
-### Prerequisites
+1. ### Prerequisites
 Before you begin, ensure you have the following installed:
 
 Node.js (v14.0.0 or higher):
 https://nodejs.org/en/download
 
-npm (v6.0.0 or higher) 
-run npm install in your terminal 
-
-### Clone the repository
+2. ### Clone the repository
+In your terminal run:
+```sh
 git clone git@github.com:EditaAdomaityte/BrainByte-client.git
 cd BrainByte-client
+```
 
-### Install dependencies
+3. ### Install dependencies
 npm (v6.0.0 or higher) 
-run npm install in your terminal 
+In your terminal run:
+```sh
+npm install
+```
 
-### Start the development server
-run npm start in your terminal 
-
+4. ### Start the development server
+In your terminal run:
+```sh
+npm start
+```
 The application will be available at URL provided in your terminal!
 
 ## Project Structure
