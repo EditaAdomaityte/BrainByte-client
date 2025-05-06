@@ -1,4 +1,4 @@
-#BrainByte Client
+# BrainByte Client
 
 A React-based frontend for BrainByte, an interactive quiz application designed for web developers to test and improve their knowledge.
 <img src="./src/pages/logo.png" alt="">
@@ -8,7 +8,7 @@ A React-based frontend for BrainByte, an interactive quiz application designed f
 https://github.com/EditaAdomaityte/BrainByte-api
 
 
-##Features
+## Features
 
 Category Selection: Choose from various web development categories
 Quiz Customization: Select the number of questions you want to answer
@@ -26,7 +26,7 @@ Take a few minutes to check out the https://miro.com/app/board/uXjVI-z4a7Q=/?mov
 
 <img src="./src/pages/ERD.png" alt="">
 
-##Technologies Used
+## Technologies Used
 
 React.js
 React Router for navigation
@@ -38,9 +38,9 @@ Before you begin, ensure you have the following installed:
 Node.js (v14.0.0 or higher) https://nodejs.org/en/download
 npm (v6.0.0 or higher)
 
-##Installation
+## Installation
 
-###Prerequisites
+### Prerequisites
 Before you begin, ensure you have the following installed:
 
 Node.js (v14.0.0 or higher):
@@ -49,47 +49,27 @@ https://nodejs.org/en/download
 npm (v6.0.0 or higher) 
 run npm install in your terminal 
 
-###Clone the repository
+### Clone the repository
 git clone git@github.com:EditaAdomaityte/BrainByte-client.git
 cd BrainByte-client
 
-###Install dependencies
+### Install dependencies
 npm (v6.0.0 or higher) 
 run npm install in your terminal 
 
-###Start the development server
+### Start the development server
 run npm start in your terminal 
 
 The application will be available at URL provided in your terminal!
 
-##Project Structure
-src/
-├── components/         
-│   ├── question/
-│   │   ├── EditQuestion.jsx
-│   │   ├── NewQuestion.jsx
-│   │   └── QuestionList.jsx
-│   ├── quiz/
-│   │   ├── NewQuiz.jsx
-│   │   ├── QuizDetails.jsx
-│   │   ├── QuizDisplay.jsx
-│   │   └── QuizList.jsx
-│   ├── ApplicationViews.jsx
-│   ├── Authorized.jsx
-│   └── NavBar.jsx
-├── pages/             
-│   ├── Home.jsx
-│   ├── Login.jsx
-│   ├── Register.jsx
-│   └── QuizHistory.js
-├── services/       
-│   ├── questionServices.jsx
-│   └── quizServices.jsx
+## Project Structure
+<img src="./src/pages/structure.png" alt="">
 
-##Usage
 
-1. ###Create an account.
-2. ###Taking a Quiz
+## Usage
+
+1. ### Create an account.
+2. ### Taking a Quiz
 
 Navigate to the 'Start quiz' in Nav Bar
 Select a category from the dropdown menu
@@ -98,19 +78,19 @@ Click "Start Quiz"
 Answer the true/false questions
 Submit your answers to see your results
 
-3. ###Viewing Quiz History
+3. ### Viewing Quiz History
 
 Navigate to the "My Results" section
 View a list of all quizzes you've taken
 Click on any quiz to see detailed results
 
-4. ###Contributing Questions
+4. ### Contributing Questions
 
 Navigate to the "Contribute" section
 Fill out the form with your question details
 Submit the question
 
-5. ###Managing Your Questions
+5. ### Managing Your Questions
 
 Navigate to the "My Questions" section
 View all questions you've contributed
@@ -119,7 +99,7 @@ Edit or delete questions as needed
 API Integration
 The frontend communicates with the Django backend through RESTful API endpoints:
 
-##Contributing
+## Contributing
 
 Fork the repository
 Create your feature branch (git checkout -b feature/amazing-feature)
