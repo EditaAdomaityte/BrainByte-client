@@ -10,13 +10,13 @@ https://github.com/EditaAdomaityte/BrainByte-api
 
 ## Features
 <p></p>
-• Category Selection: Choose from various web development categories
-• Quiz Customization: Select the number of questions you want to answer
-• Interactive Quiz Interface: Answering true/false questions with an intuitive UI
-• Results Display: Detailed quiz results showing correct and incorrect answers
-• Quiz History: View a list of all quizzes you've taken
-• Contribution System: Submit your own questions to help grow the platform
-• Question Management: Edit and delete questions you've contributed
+• Category Selection: Choose from various web development categories<br>
+• Quiz Customization: Select the number of questions you want to answer<br>
+• Interactive Quiz Interface: Answering true/false questions with an intuitive UI<br>
+• Results Display: Detailed quiz results showing correct and incorrect answers<br>
+• Quiz History: View a list of all quizzes you've taken<br>
+• Contribution System: Submit your own questions to help grow the platform<br>
+• Question Management: Edit and delete questions you've contributed<br>
 </p>
 
 ## Wireframe
@@ -68,41 +68,42 @@ The application will be available at URL provided in your terminal!
   
 2. ### Taking a Quiz
 <p>
-• Navigate to the 'Start quiz' in Nav Bar
-• Select a category from the dropdown menu
-• Choose the number of questions you want to answer
-• Click "Start Quiz"
-• Answer the true/false questions
-• Submit your answers to see your results
+Navigate to the 'Start quiz' in Nav Bar<br>
+Select a category from the dropdown menu<br>
+Choose the number of questions you want to answer<br>
+Click "Start Quiz"<br>
+Answer the true/false questions<br>
+Submit your answers to see your results<br>
 </p>
 
 3. ### Viewing Quiz History
 <p>
-• Navigate to the "My Results" section
-• View a list of all quizzes you've taken
-• Click on any quiz to see detailed results
+Navigate to the "My Results" section<br>
+View a list of all quizzes you've taken<br>
+Click on any quiz to see detailed results<br>
 </p>
 
 4. ### Contributing Questions
 <p>
-• Navigate to the "Contribute" section
-• Fill out the form with your question details
-• Submit the question
+Navigate to the "Contribute" section<br>
+Fill out the form with your question details<br>
+Submit the question<br>
 </p>
+
 5. ### Managing Your Questions
 <p>
-• Navigate to the "My Questions" section
-• View all questions you've contributed
-• Edit or delete questions as needed
+Navigate to the "My Questions" section<br>
+View all questions you've contributed<br>
+Edit or delete questions as needed<br>
 </p>
 
 ## Contributing
 <p> 
-• Fork the repository
-• Create your feature branch (git checkout -b feature/amazing-feature)
-• Commit your changes (git commit -m 'Add some amazing feature')
-• Push to the branch (git push origin feature/amazing-feature)
-• Open a Pull Request
+Fork the repository<br>
+Create your feature branch (git checkout -b feature/amazing-feature)<br>
+Commit your changes (git commit -m 'Add some amazing feature')<br>
+Push to the branch (git push origin feature/amazing-feature)<br>
+Open a Pull Request<br>
 </p>
 
 ## Technologies Used
