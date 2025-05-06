@@ -62,7 +62,9 @@ The application will be available at URL provided in your terminal!
 
 ## Usage
 
-1. ### Create an account.
+1. ### Creating an account.
+  Create an account or Log in if account is already created.
+  
 2. ### Taking a Quiz
 
 Navigate to the 'Start quiz' in Nav Bar
