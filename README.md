@@ -4,7 +4,7 @@ A React-based frontend for BrainByte, an interactive quiz application designed f
 <img src="./src/pages/logo.png" alt="">
 
 
-##BrainByte API Link:
+## BrainByte API Link:
 https://github.com/EditaAdomaityte/BrainByte-api
 
 
