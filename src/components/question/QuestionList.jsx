@@ -23,22 +23,11 @@ export const QuestionList = () => {
     fetchQuestions();
   }, []);
 
-  const handleDelete = async (questionId) => {
-    try {
-      setIsDeleting(true);
-      const result = await deleteQuestion(questionId);
-
-      if (result.success) {
-        // Fetching questions again from the server
-        await fetchQuestions();
-
-      } else {
-        console.error("Failed to delete question:", result.error);
-      }
-    } catch (error) {
-      console.error("Error in delete operation:", error);
-    } finally {
-      setIsDeleting(false);
+  const handleDelete = (questionId) => {
+    if (window.confirm("Are you sure you want to delete this question?")) {
+      deleteQuestion(questionId).then(() => {
+        setAllQuestions((prev) => prev.filter((q) => q.id !== questionId));
+      });
     }
   };
 
@@ -81,6 +70,10 @@ export const QuestionList = () => {
                   <p>
                     Answer:{" "}
                     <strong>{question.answer ? "True" : "False"}</strong>
+                  </p>
+                  <p>
+                    Approved:{" "}
+                    <strong>{question.approved ? "Yes" : "No"}</strong>
                   </p>
                 </div>
                 <button

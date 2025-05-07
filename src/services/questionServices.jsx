@@ -43,7 +43,7 @@ export const deleteQuestion = async (questionId) => {
 };
 
 export const getmyquestions = async (quizId) => {
-  const response = await fetch(`http://localhost:8000/questions`, {
+  const response = await fetch(`http://localhost:8000//questions?mine=true`, {
     headers: {
       Authorization: `Token ${
         JSON.parse(localStorage.getItem("user_token")).token
@@ -53,6 +53,19 @@ export const getmyquestions = async (quizId) => {
   const questions = await response.json();
   return questions;
 };
+
+
+export const getQuestions = async () => {
+    const response = await fetch(`http://localhost:8000//questions`, {
+      headers: {
+        Authorization:  `Token ${
+            JSON.parse(localStorage.getItem("user_token")).token
+          }`,
+      },
+    });
+    const questions = await response.json();
+    return questions;
+  };
 
 
 export const getQuestionsByCategory=async(categoryId)=>{
@@ -177,3 +190,5 @@ export const updateQuestion = async (questionId, updatedQuestion) => {
     throw new Error(`HTTP error! status: ${response.status}`);
   }
 };
+
+export const updateQuestionApproval=(id)=>{}

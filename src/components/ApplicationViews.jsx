@@ -10,6 +10,7 @@ import { QuizDisplay } from "./quiz/QuizDisplay.jsx"
 import { EditQuestion } from "./question/EditQuestion.jsx"
 import Home from "../pages/Home.jsx"
 import { Register } from "../pages/Register.jsx"
+import { Admin } from "./question/Admin.jsx"
 
 
 export const ApplicationViews = () => {
@@ -25,6 +26,7 @@ export const ApplicationViews = () => {
                     <Route path=":questionId/edit" element={<EditQuestion />}/>
                 </Route>
                 <Route path="newquestion" element={<NewQuestion />} />
+                <Route path="admin" element={<Admin />} />
                 <Route path="myresults">
                     <Route index element={<QuizList />} />
                     <Route path=":quizId" element={<QuizDetails />} />

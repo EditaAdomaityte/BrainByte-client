@@ -2,7 +2,9 @@ import { NavLink, useNavigate } from "react-router-dom";
 
 export const NavBar = () => {
   const navigate = useNavigate();
+  const user = JSON.parse(localStorage.getItem("user"));
   const isLoggedIn = localStorage.getItem("user_token") !== null;
+  const isStaff = user?.is_staff;
 
   return (
     <nav
@@ -24,6 +26,12 @@ export const NavBar = () => {
           <NavLink to="/myresults" className="navbar-item custom-navbar-item">
             My Results
           </NavLink>
+
+          {isStaff && (
+            <NavLink to="/admin" className="navbar-item custom-navbar-item">
+              Admin
+            </NavLink>
+          )}
         </div>
 
         <div className="navbar-end">
@@ -39,9 +47,12 @@ export const NavBar = () => {
                 onMouseOver={(e) =>
                   (e.target.style.backgroundColor = "#275c44")
                 } // lighter green on hover
-                onMouseOut={(e) => (e.target.style.backgroundColor = "rgb(34, 78, 60)")}
+                onMouseOut={(e) =>
+                  (e.target.style.backgroundColor = "rgb(34, 78, 60)")
+                }
                 onClick={() => {
                   localStorage.removeItem("user_token");
+                  localStorage.removeItem("user");
                   navigate("/login");
                 }}
               >

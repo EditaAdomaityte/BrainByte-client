@@ -18,8 +18,9 @@ export const Login = () => {
     })
       .then((res) => res.json())
       .then((authInfo) => {
-        if (authInfo.valid) {
+        if (authInfo && authInfo.token) {
           localStorage.setItem("user_token", JSON.stringify(authInfo));
+          localStorage.setItem("user", JSON.stringify(authInfo.user));
           navigate("/");
         } else {
           setShowModal(true);
