@@ -28,10 +28,10 @@ export const NavBar = () => {
           </NavLink>
 
           {isStaff && (
-            <NavLink to="/admin" className="navbar-item custom-navbar-item">
-              Admin
-            </NavLink>
-          )}
+    <NavLink to="/admin" className="navbar-item custom-navbar-item">
+      Admin
+    </NavLink>
+  )}
         </div>
 
         <div className="navbar-end">
@@ -47,11 +47,9 @@ export const NavBar = () => {
                 onMouseOver={(e) =>
                   (e.target.style.backgroundColor = "#275c44")
                 } // lighter green on hover
-                onMouseOut={(e) =>
-                  (e.target.style.backgroundColor = "rgb(34, 78, 60)")
-                }
+                onMouseOut={(e) => (e.target.style.backgroundColor = "rgb(34, 78, 60)")}
                 onClick={() => {
-                  localStorage.removeItem("user_token");
+                  localStorage.removeItem("user_token")
                   localStorage.removeItem("user");
                   navigate("/login");
                 }}
