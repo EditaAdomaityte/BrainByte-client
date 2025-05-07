@@ -10,15 +10,15 @@ https://github.com/EditaAdomaityte/BrainByte-api
 
 ## Features
 <p></p>
-• **Category Selection**: Choose from various web development categories<br>
-• **Quiz Customization**: Select the number of questions you want to answer<br>
-• **Interactive Quiz Interface**: Answering true/false questions with an intuitive UI<br>
-• **Results Display**: Detailed quiz results showing correct and incorrect answers<br>
-• **Quiz History**: View a list of all quizzes you've taken<br>
-• **Contribution System**: Submit your own questions to help grow the platform<br>
-• **Question Management**: Edit and delete questions you've contributed<br>
- • **Admin Dashboard**: Admins can review, approve, or delete submitted questions<br> 
- • **User Management**: Admins can assign admin roles to other users<br>
+• Category Selection: Choose from various web development categories<br>
+• Quiz Customization: Select the number of questions you want to answer<br>
+• Interactive Quiz Interface: Answering true/false questions with an intuitive UI<br>
+• Results Display: Detailed quiz results showing correct and incorrect answers<br>
+• Quiz History: View a list of all quizzes you've taken<br>
+• Contribution System: Submit your own questions to help grow the platform<br>
+• Question Management: Edit and delete questions you've contributed<br>
+• Admin Dashboard: Admins can review, approve, or delete submitted questions<br> 
+• User Management: Admins can assign admin roles to other users<br>
 
 </p>
 
