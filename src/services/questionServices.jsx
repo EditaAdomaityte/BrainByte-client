@@ -191,4 +191,15 @@ export const updateQuestion = async (questionId, updatedQuestion) => {
   }
 };
 
-export const updateQuestionApproval=(id)=>{}
+export const updateQuestionApproval=(questionId, approved) => {
+    return fetch(`http://localhost:8000/questions/${questionId}`, {
+      method: "PATCH",
+      headers: {
+        Authorization:`Token ${
+          JSON.parse(localStorage.getItem("user_token")).token
+        }`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ "approved":approved }),
+    });
+}

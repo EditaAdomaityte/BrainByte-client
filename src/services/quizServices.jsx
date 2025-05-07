@@ -96,12 +96,14 @@ export const getUsers= async()=>{
 }
 
 export const updateUserIsStaff=(userId, isStaff) => {
-    return fetch(`http://localhost:8000/users/${userId}/`, {
+    return fetch(`http://localhost:8000/users/${userId}`, {
       method: "PATCH",
       headers: {
-        Authorization: `Token ${localStorage.getItem("user_token")}`,
+        Authorization: `Token ${
+              JSON.parse(localStorage.getItem("user_token")).token
+            }`,
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ is_staff: isStaff }),
+      body: JSON.stringify({ "is_staff": isStaff }),
     });
   };
