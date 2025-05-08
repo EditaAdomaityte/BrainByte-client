@@ -79,3 +79,31 @@ export const submitQuizResponses = async (responses) => {
 //           }
 //     }
 // }
+
+export const getUsers= async()=>{
+    const response = await fetch(
+        `http://localhost:8000/users`,
+        {
+          headers: {
+            Authorization: `Token ${
+              JSON.parse(localStorage.getItem("user_token")).token
+            }`,
+          },
+        }
+      );
+      const users = await response.json();
+      return users;
+}
+
+export const updateUserIsStaff=(userId, isStaff) => {
+    return fetch(`http://localhost:8000/users/${userId}`, {
+      method: "PATCH",
+      headers: {
+        Authorization: `Token ${
+              JSON.parse(localStorage.getItem("user_token")).token
+            }`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ "is_staff": isStaff }),
+    });
+  };

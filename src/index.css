@@ -5,10 +5,16 @@
   font-weight: 600;
   transition: background-color 0.3s ease;
 }
+.navbar-item.active {
+  background-color: #275c44 !important;
+  color: white !important;
+}
+
+
 
 .custom-navbar-item:hover {
-  background-color: #275c44; /* lighter green for hover */
-  color: #f0f0f0; /* slight tone shift for visibility */
+  background-color: #275c44; 
+  color: #f0f0f0dc; 
 }
 
 .quiz-card {
@@ -39,4 +45,8 @@
 .button.is-success.is-outlined:hover,
 .button.is-danger.is-outlined:hover {
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2);
+}
+
+.custom-navbar-item {
+  margin-right: 2rem;
 }

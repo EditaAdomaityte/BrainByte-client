@@ -29,6 +29,7 @@ export const Register = () => {
       .then((authInfo) => {
         if (authInfo && authInfo.token) {
           localStorage.setItem("user_token", JSON.stringify(authInfo));
+          localStorage.setItem("user", JSON.stringify(authInfo.user));
           navigate("/");
         } else {
           setShowModal(true);
@@ -41,7 +42,10 @@ export const Register = () => {
       {/* Modal */}
       {showModal && (
         <div className="modal is-active">
-          <div className="modal-background" onClick={() => setShowModal(false)}></div>
+          <div
+            className="modal-background"
+            onClick={() => setShowModal(false)}
+          ></div>
           <div className="modal-card">
             <header
               className="modal-card-head"
@@ -169,7 +173,10 @@ export const Register = () => {
                     <button
                       type="submit"
                       className="button is-fullwidth"
-                      style={{ backgroundColor: "rgb(34, 78, 60)", color: "white" }}
+                      style={{
+                        backgroundColor: "rgb(34, 78, 60)",
+                        color: "white",
+                      }}
                     >
                       Register
                     </button>

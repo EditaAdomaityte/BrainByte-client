@@ -68,7 +68,7 @@ export const QuizDisplay = () => {
             Quiz on {quizAttempt.category.name}
           </h1>
 
-          {questions.map((question) => {
+          {questions.map((question, index) => {
             const currentResponse = responses.find(
               (r) => r.question === question.id
             );
@@ -78,7 +78,9 @@ export const QuizDisplay = () => {
                 key={question.id}
                 className="box mb-4 has-background-white-ter"
               >
-                <p className="subtitle is-5 has-text-dark">{question.body}</p>
+                <p className="subtitle is-5 has-text-dark">
+                  {index + 1}. {question.body}
+                </p>
 
                 <div className="field">
                   <div className="control">
