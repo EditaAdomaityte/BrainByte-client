@@ -19,7 +19,6 @@ https://github.com/EditaAdomaityte/BrainByte-api
 • Question Management: Edit and delete questions you've contributed<br>
 • Admin Dashboard: Admins can review, approve, or delete submitted questions<br> 
 • User Management: Admins can assign admin roles to other users<br>
-
 </p>
 
 ## Wireframe
@@ -100,6 +99,7 @@ View all questions you've contributed<br>
 Edit or delete questions as needed<br>
 </p>
 
+
 6. ### Admin Panel Access
 
 <p>
@@ -108,7 +108,6 @@ From the Admin Panel, you can:<br>
 • View, approve or delete user-submitted questions<br>
 • Promote other users to admin status<br>
 </p>
-
 
 ## Contributing
 <p> 
@@ -121,7 +120,9 @@ Open a Pull Request<br>
 
 ## Technologies Used
 
+
 ![HTML5](https://img.shields.io/badge/html5%20-%23E34F26.svg?&style=for-the-badge&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/css3%20-%231572B6.svg?&style=for-the-badge&logo=css3&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript%20-%23323330.svg?&style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![React](https://img.shields.io/badge/react%20-%2320232a.svg?&style=for-the-badge&logo=react&logoColor=%2361DAFB) ![Git](https://img.shields.io/badge/git%20-%23F05033.svg?&style=for-the-badge&logo=git&logoColor=white) ![GitHub](https://img.shields.io/badge/github%20-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white) ![Visual Studio Code](https://img.shields.io/badge/VSCode%20-%23007ACC.svg?&style=for-the-badge&logo=visual-studio-code&logoColor=white) ![Ruby](https://img.shields.io/badge/ruby%20-%23CC342D.svg?&style=for-the-badge&logo=ruby&logoColor=white)
+
 
 #### Created by Edita Adomaityte
 
