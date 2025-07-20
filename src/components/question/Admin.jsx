@@ -6,10 +6,15 @@ import { getUsers, updateUserIsStaff } from "../../services/quizServices";
 export const Admin = () => {
   const [allQuestions, setAllQuestions] = useState([]);
   const [allUsers, setAllUsers] = useState([]);
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    getQuestions().then(setAllQuestions);
-    getUsers().then(setAllUsers);
+    setLoading(true);
+    Promise.all([
+      getQuestions().then(setAllQuestions),
+      getUsers().then(setAllUsers)
+    ])
+      .finally(() => setLoading(false));
   }, []);
 
   const handleApprovalChange = (questionId, value) => {
@@ -36,15 +41,21 @@ export const Admin = () => {
     });
   };
 
+  if (loading) {
+    return <div className="m-4">Loading data...</div>;
+  }
+  else
   return (
     <div className="columns m-4">
       <div className="column is-two-thirds">
         <h2 className="title is-4">Questions</h2>
+        <p>Total :{allQuestions.length}</p>
         <table className="table is-striped is-fullwidth is-hoverable">
           <thead>
             <tr>
               <th>Body</th>
               <th>Answer</th>
+              <th>Categories</th>
               <th>Approved</th>
               <th></th>
             </tr>
@@ -54,6 +65,12 @@ export const Admin = () => {
               <tr key={q.id}>
                 <td>{q.body}</td>
                 <td>{q.answer ? "True" : "False"}</td>
+                <td>{q?.categories?.map((cat, index) => (
+                        <span key={cat.id}>
+                          {cat.name}
+                          {index < q.categories.length - 1 ? ", " : ""}
+                        </span>
+                      ))}</td>
                 <td>
                   <label className="radio mr-2">
                     <input
@@ -91,6 +108,7 @@ export const Admin = () => {
       {/* Users Table (1/3 width) */}
       <div className="column is-one-third">
         <h2 className="title is-4">Users</h2>
+        <p> Total: {allUsers.length}</p>
         <table className="table is-striped is-fullwidth is-hoverable">
           <thead>
             <tr>

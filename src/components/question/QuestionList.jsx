@@ -26,7 +26,7 @@ export const QuestionList = () => {
   const handleDelete = (questionId) => {
     if (window.confirm("Are you sure you want to delete this question?")) {
       deleteQuestion(questionId).then(() => {
-        setAllQuestions((prev) => prev.filter((q) => q.id !== questionId));
+        setMyQuestions((prev) => prev.filter((q) => q.id !== questionId));
       });
     }
   };
