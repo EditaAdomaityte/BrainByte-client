@@ -50,6 +50,7 @@ export const Admin = () => {
       <div className="column is-two-thirds">
         <h2 className="title is-4">Questions</h2>
         <p>Total :{allQuestions.length}</p>
+        <div className="table-container">
         <table className="table is-striped is-fullwidth is-hoverable">
           <thead>
             <tr>
@@ -103,6 +104,8 @@ export const Admin = () => {
             ))}
           </tbody>
         </table>
+        </div>
+        
       </div>
 
       {/* Users Table (1/3 width) */}

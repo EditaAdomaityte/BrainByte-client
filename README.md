@@ -55,7 +55,7 @@ npm install
 4. ### Start the development server
 In your terminal run:
 ```sh
-npm start
+npm run dev
 ```
 The application will be available at URL provided in your terminal!
 
